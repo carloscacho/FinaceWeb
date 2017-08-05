@@ -9,4 +9,8 @@ module.exports = function(server) {
     //rotas da api
     const finaceService = require('../api/finace/financeService');
     finaceService.register(router, '/finance')
+
+    const financeSummaryService = require('../api/finaceSummary/financeSummaryService')
+
+    router.route('/financeSummary').get(financeSummaryService.getSummary)
 }

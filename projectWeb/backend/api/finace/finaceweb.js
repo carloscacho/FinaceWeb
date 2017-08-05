@@ -6,12 +6,12 @@ const mongoose = restful.mongoose
 
 const creditSchema = new mongoose.Schema({
   name:{ type: String, required: true},
-  value: { type: Number, min:0, required: true}
+  value: { type: Number, min:0, required: [true, "informe o valor do Credito"]}
 })
 
 const debitSchema = new mongoose.Schema({
   name:{ type: String, required: true},
-  value: { type: Number, min:0, required: true},
+  value: { type: Number, min:0, required: [true, "informe o valor do Debito"]},
   status: { type: String, required: true, uppercase:true,
   enum: ['PAGO', 'PENDENTE', 'AGENDADO']}
 })
