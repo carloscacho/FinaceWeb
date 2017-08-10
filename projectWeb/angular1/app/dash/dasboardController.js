@@ -1,22 +1,26 @@
-angular.module('appPrincipal')
-.controller('DashboardCtrl', [
-  '$scope',
-  '$http',
-  DashboardController
-])
+//IIFE
+(function() {
 
-function DashboardController($scope, $http) {
+  angular.module('appPrincipal')
+  .controller('DashboardCtrl', [
+    '$http',
+    DashboardController
+  ])
 
-  $scope.getSummary = function() {
-    const url = 'http://localhost:5004/api/financeSummary'
-    $http.get(url).then(function(response) {
-        const {credit = 0, debt = 0} = response.data
-        $scope.credit = credit
-        $scope.debt = debt
-        $scope.total = credit - debt
-    })
+  function DashboardController($http) {
+    const vm = this
+    vm.getSummary = function() {
+      const url = 'http://localhost:5004/api/financeSummary'
+      $http.get(url).then(function(response) {
+          const {credit = 0, debt = 0} = response.data
+          vm.credit = credit
+          vm.debt = debt
+          vm.total = credit - debt
+      })
 
+    }
+
+    vm.getSummary()
   }
 
-  $scope.getSummary()
-}
+})()

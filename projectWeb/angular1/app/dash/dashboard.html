@@ -2,16 +2,16 @@
 small="Versão 1.0">
 </content-header>
 
-<section class="content" ng-controller='DashboardCtrl'>
-  <value-box grid="4" color="green" value="R$ {{ credit | number:2 }}"
+<section class="content" ng-controller='DashboardCtrl as dash'>
+  <value-box grid="4" color="green" value="R$ {{ dash.credit | number:2 }}"
   text="Total de Créditos" icon="fa-bank">
   </value-box>
 
-  <value-box grid="4" color="red" value="R$ {{ debt | number:2}}"
+  <value-box grid="4" color="red" value="R$ {{ dash.debt | number:2}}"
   text="Total de Débitos" icon="fa-credit-card">
   </value-box>
 
-  <value-box grid="4" color="blue" value="R$ {{ total | number:2}}"
+  <value-box grid="4" color="blue" value="R$ {{ dash.total | number:2}}"
   text="Total Consolidado" icon="fa-money">
   </value-box>
 
