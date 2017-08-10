@@ -2,40 +2,17 @@
 small="Versão 1.0">
 </content-header>
 
-<section class="content">
-  <div class="col-xs-4">
-    <div class="small-box bg-green">
-      <div class="inner">
-        <h3>R$ 10</h3>
-        <p> Total de Créditos</p>
-      </div>
-      <div class="icon">
-        <i class="fa fa-bank"></i>
-      </div>
-    </div>
-  </div>
+<section class="content" ng-controller='DashboardCtrl'>
+  <value-box grid="4" color="green" value="R$ {{ credit | number:2 }}"
+  text="Total de Créditos" icon="fa-bank">
+  </value-box>
 
-  <div class="col-xs-4">
-    <div class="small-box bg-red">
-      <div class="inner">
-        <h3>R$ 10</h3>
-        <p> Total de Débitos</p>
-      </div>
-      <div class="icon">
-        <i class="fa fa-credit-card"></i>
-      </div>
-    </div>
-  </div>
+  <value-box grid="4" color="red" value="R$ {{ debt | number:2}}"
+  text="Total de Débitos" icon="fa-credit-card">
+  </value-box>
 
-  <div class="col-xs-4">
-    <div class="small-box bg-blue">
-      <div class="inner">
-        <h3>R$ 10</h3>
-        <p> Total Consolidado </p>
-      </div>
-      <div class="icon">
-        <i class="fa fa-money"></i>
-      </div>
-    </div>
-  </div>
+  <value-box grid="4" color="blue" value="R$ {{ total | number:2}}"
+  text="Total Consolidado" icon="fa-money">
+  </value-box>
+
 </section>
