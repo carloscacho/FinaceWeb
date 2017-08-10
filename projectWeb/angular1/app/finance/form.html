@@ -1,0 +1,17 @@
+<div class="form">
+  <div class="box-body">
+    <field id="name" label="Nome" placeh="Informe o Nome" grid="12 6 4"
+    model="fCtrl.finance.name"></field>
+    <field id="month" label="Mês" placeh="Informe o Mês" grid="12 6 4" type="number"
+    model="fCtrl.finance.month"></field>
+    <field id="year" label="Ano" placeh="Informe o Ano" grid="12 6 4" type="number"
+    model="fCtrl.finance.year"></field>
+
+  </div>
+  <div class="box-footer">
+    <button class="btn btn-primary" ng-click="fCtrl.create()">Incluir</button>
+    <button class="btn btn-info">Alterar</button>
+    <button class="btn btn-danger">Excluir</button>
+    <button class="btn btn-default">Cancelar</button>
+  </div>
+</div>
