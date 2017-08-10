@@ -2,9 +2,10 @@
     angular.module('appPrincipal').controller('FinanceCtrl', [
       '$http',
       'msgs',
+      'tabs',
       FinanceController
     ])
-    function FinanceController($http, msgs) {
+    function FinanceController($http, msgs, tabs) {
         const vm = this
         const url = 'http://localhost:5004/api/finance'
 
@@ -12,6 +13,7 @@
           $http.get(url).then(function(response) {
             vm.finance = {}
             vm.finances = response.data
+            tabs.show(vm, {tabList: true, tabCreate: true})
           })
         }
 
@@ -23,6 +25,19 @@
           }).catch(function(response) {
               msgs.addError(response.data.errors)
           })
+        }
+
+        vm.showTabUpdate = function(finance) {
+          vm.finance = finance
+          tabs.show(vm, {tabUpdate: true})
+
+        }
+
+
+        vm.showTabDelete = function(finance) {
+            vm.finance = finance
+            tabs.show(vm, {tabDelete: true})
+
         }
 
         vm.refresh()
