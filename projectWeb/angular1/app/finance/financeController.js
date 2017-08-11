@@ -40,6 +40,26 @@
 
         }
 
+        vm.delete = function() {
+          const deleteUrl = `${url}/${vm.finance._id}`
+          $http.delete(deleteUrl, vm.finance).then(function(response) {
+                vm.refresh()
+                msgs.addSuccess(`Operação de exclusão realizada com Sucesso!`)
+          }).catch(function(response) {
+              msgs.addError(response.data.errors)
+          })
+        }
+
+        vm.update = function() {
+          const updateUrl = `${url}/${vm.finance._id}`
+          $http.put(updateUrl, vm.finance).then(function(response) {
+                vm.refresh()
+                msgs.addSuccess(`Operação de alteração realizada com Sucesso!`)
+          }).catch(function(response) {
+              msgs.addError(response.data.errors)
+          })
+        }
+
         vm.refresh()
     }
 })()

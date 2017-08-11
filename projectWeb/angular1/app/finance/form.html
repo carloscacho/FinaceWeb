@@ -1,17 +1,17 @@
 <div class="form">
   <div class="box-body">
     <field id="name" label="Nome" placeh="Informe o Nome" grid="12 6 4"
-    model="fCtrl.finance.name"></field>
+    model="fCtrl.finance.name" readonly="fCtrl.tabDelete"></field>
     <field id="month" label="Mês" placeh="Informe o Mês" grid="12 6 4" type="number"
-    model="fCtrl.finance.month"></field>
+    model="fCtrl.finance.month" readonly="fCtrl.tabDelete"></field>
     <field id="year" label="Ano" placeh="Informe o Ano" grid="12 6 4" type="number"
-    model="fCtrl.finance.year"></field>
+    model="fCtrl.finance.year" readonly="fCtrl.tabDelete" ></field>
 
   </div>
   <div class="box-footer">
     <button ng-if="fCtrl.tabCreate" class="btn btn-primary" ng-click="fCtrl.create()">Incluir</button>
-    <button ng-if="fCtrl.tabUpdate"  class="btn btn-info">Alterar</button>
-    <button ng-if="fCtrl.tabDelete"  class="btn btn-danger">Excluir</button>
+    <button ng-click="fCtrl.update()" ng-if="fCtrl.tabUpdate"  class="btn btn-info">Alterar</button>
+    <button ng-click="fCtrl.delete()" ng-if="fCtrl.tabDelete"  class="btn btn-danger">Excluir</button>
     <button ng-click="fCtrl.refresh()" class="btn btn-default">Cancelar</button>
   </div>
 </div>
