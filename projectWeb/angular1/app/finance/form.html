@@ -7,6 +7,20 @@
     <field id="year" label="Ano" placeh="Informe o Ano" grid="12 6 4" type="number"
     model="fCtrl.finance.year" readonly="fCtrl.tabDelete" ></field>
 
+    <div class="col-xs-12 col-sm-6">
+        <fieldset>
+          <legend>Créditos</legend>
+          <div ng-include="'finance/creditList.html'"></div>
+        </fieldset>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+        <fieldset>
+          <legend>Débitos</legend>
+          <div ng-include="'finance/debtList.html'"></div>
+        </fieldset>
+    </div>
+
   </div>
   <div class="box-footer">
     <button ng-if="fCtrl.tabCreate" class="btn btn-primary" ng-click="fCtrl.create()">Incluir</button>
