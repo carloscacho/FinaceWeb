@@ -60,6 +60,30 @@
           })
         }
 
+        //credits button
+        vm.addCredit = function(index) {
+            vm.finance.credits.splice(index + 1, 0, {})
+        }
+        vm.cloneCredit = function(index, {name, value}) {
+            vm.finance.credits.splice(index + 1, 0, {name, value})
+        }
+        vm.deleteCredit = function(index) {
+            if(vm.finance.credits.length > 1)
+              vm.finance.credits.splice(index, 1)
+        }
+
+        //debts button
+        vm.addDebt = function(index) {
+            vm.finance.debts.splice(index + 1, 0, {})
+        }
+        vm.cloneDebt = function(index, {name, value, status}) {
+            vm.finance.debts.splice(index + 1, 0, {name, value, status})
+        }
+        vm.deleteDebt = function(index) {
+            if(vm.finance.debts.length > 1)
+              vm.finance.debts.splice(index, 1)
+        }
+
         vm.refresh()
     }
 })()
