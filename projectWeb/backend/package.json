@@ -10,9 +10,11 @@
   "author": "Carlos Emilio",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-query-int": "^1.0.1",
+    "jsonwebtoken": "^7.4.2",
     "lodash": "^4.17.4",
     "mongoose": "^4.11.5",
     "mongoose-paginate": "^5.0.3",
