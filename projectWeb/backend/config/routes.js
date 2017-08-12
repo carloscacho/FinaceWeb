@@ -7,10 +7,10 @@ module.exports = function(server) {
     server.use('/api', router)
 
     //rotas da api
-    const finaceService = require('../api/finace/financeService');
-    finaceService.register(router, '/finance')
+    const financeService = require('../api/finance/financeService');
+    financeService.register(router, '/finance')
 
-    const financeSummaryService = require('../api/finaceSummary/financeSummaryService')
+    const financeSummaryService = require('../api/financeSummary/financeSummaryService')
 
     router.route('/financeSummary').get(financeSummaryService.getSummary)
 }

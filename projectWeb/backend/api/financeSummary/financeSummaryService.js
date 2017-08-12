@@ -1,9 +1,9 @@
 const _ = require('lodash')
-var finaceweb = require('../finace/finaceweb')
+var financeweb = require('../finance/financeweb')
 
 // middleware de agregação dos valores
 function getSummary(req, res) {
-  finaceweb.aggregate({
+  financeweb.aggregate({
     $project: {credit: {$sum: "$credits.value"}, debt: {$sum: "$debts.value"}}
   }, {
     $group: {
