@@ -15,5 +15,6 @@ gulp.task('watch', function() {
   watch('app/**/*.css', () => gulp.start('app.css'))
   watch('app/**/*.js', () => gulp.start('app.js'))
   watch('assets/**/*.*', () => gulp.start('app.assets'))
+  
 
 })
