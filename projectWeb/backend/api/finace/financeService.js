@@ -1,11 +1,11 @@
-const financeweb = require('./financeweb')
+const finaceweb = require('./finaceweb')
 var _ = require('lodash')
 
-financeweb.methods(['get', 'post', 'put', 'delete'])
-financeweb.updateOptions({new: true, runValidators: true})
+finaceweb.methods(['get', 'post', 'put', 'delete'])
+finaceweb.updateOptions({new: true, runValidators: true})
 
 //interceptar os erros
-financeweb.after('post', sendErrosOrNext).after('put', sendErrosOrNext)
+finaceweb.after('post', sendErrosOrNext).after('put', sendErrosOrNext)
 
 function sendErrosOrNext(req, res, next) {
   const bundle = res.locals.bundle
@@ -26,8 +26,8 @@ function parseErrors(nodeErrors) {
 }
 
 //routa que realiza a contabilidade dos registos
-financeweb.route('count', function(req, res, next) {
-    financeweb.count(function(error, value) {
+finaceweb.route('count', function(req, res, next) {
+    finaceweb.count(function(error, value) {
       if(error){
         res.status(500).json({errors: [error]})
       }
@@ -40,4 +40,4 @@ financeweb.route('count', function(req, res, next) {
 
 
 
-module.exports = financeweb
+module.exports = finaceweb

@@ -9,6 +9,7 @@ module.exports = function(server) {
     const openApi = express.Router()
     server.use('/oapi', openApi)
 
+<<<<<<< HEAD
     const AuthService = require('../api/user/authService')
     openApi.post('/login', AuthService.login)
     openApi.post('/signup', AuthService.signup)
@@ -26,5 +27,12 @@ module.exports = function(server) {
     const billingSummaryService = require('../api/financeSummary/financeSummaryService')
     protectedApi.route('/billingSummary').get(billingSummaryService.getSummary)
 
+=======
+    //rotas da api
+    const finaceService = require('../api/finace/financeService');
+    finaceService.register(router, '/finance')
+
+    const financeSummaryService = require('../api/finaceSummary/financeSummaryService')
+>>>>>>> parent of f856c77... paginator
 
 }
