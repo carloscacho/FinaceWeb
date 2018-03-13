@@ -14,8 +14,5 @@ module.exports = function(server) {
     finaceService.register(router, '/finance')
 
     const financeSummaryService = require('../api/finaceSummary/financeSummaryService')
-<<<<<<< HEAD
-=======
->>>>>>> parent of f856c77... paginator
 
 }
