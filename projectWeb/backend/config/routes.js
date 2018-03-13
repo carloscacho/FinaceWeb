@@ -6,8 +6,8 @@ module.exports = function(server) {
     /*
     * Rotas abertas
     */
-    const openApi = express.Router()
-    server.use('/oapi', openApi)
+    const router = express.Router()
+    server.use('/api', router)
 
     //rotas da api
     const finaceService = require('../api/finace/financeService');
