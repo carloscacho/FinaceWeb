@@ -17,13 +17,16 @@
           type="number"></td>
 
         <td class="table-actions">
-          <button class="btn btn-success" ng-class="{disabled: fCtrl.tabDelete}">
+          <button class="btn btn-success" ng-class="{disabled: fCtrl.tabDelete}"
+            ng-click="fCtrl.btnAddCredit($index)">
             <i class="fa fa-plus"></i>
           </button>
-          <button class="btn btn-warning" ng-class="{disabled: fCtrl.tabDelete}">
+          <button class="btn btn-warning" ng-class="{disabled: fCtrl.tabDelete}"
+            ng-click="fCtrl.btnCloneCredit($index, credit)">
             <i class="fa fa-clone"></i>
           </button>
-          <button class="btn btn-danger" ng-class="{disabled: fCtrl.tabDelete}">
+          <button class="btn btn-danger" ng-class="{disabled: fCtrl.tabDelete}"
+            ng-click="fCtrl.btnDeleteCredit($index)">
             <i class="fa fa-trash-o"></i>
           </button>
         </td>
