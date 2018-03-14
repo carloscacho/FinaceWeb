@@ -22,15 +22,15 @@
             type="number"></td>
 
         <td class="table-actions">
-          <button class="btn btn-success" ng-class="{disabled: fCtrl.tabDelete}"
+          <button class="btn btn-success" ng-disabled="fCtrl.tabDelete"
             ng-click="fCtrl.btnAddDebit($index)">
             <i class="fa fa-plus"></i>
           </button>
-          <button class="btn btn-warning" ng-class="{disabled: fCtrl.tabDelete}"
+          <button class="btn btn-warning" ng-disabled="fCtrl.tabDelete"
             ng-click="fCtrl.btnCloneDebit($index, debt)">
             <i class="fa fa-clone"></i>
           </button>
-          <button class="btn btn-danger" ng-class="{disabled: fCtrl.tabDelete}"
+          <button class="btn btn-danger" ng-disabled="fCtrl.tabDelete"
           ng-click="fCtrl.btnDeleteDebit($index)">
             <i class="fa fa-trash-o"></i>
           </button>
