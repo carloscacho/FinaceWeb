@@ -7,6 +7,13 @@
     <field id="year" label="Ano" placeh="Informe o Ano" grid="12 6 4" type="number"
     model="fCtrl.finance.year" readonly="fCtrl.tabDelete" ></field>
 
+    <div class="col-xs-12">
+      <fieldset>
+        <legend>Resumo</legend>
+        <div ng-include="'finance/summary.html'"></div>
+      </fieldset>
+    </div>
+
     <div class="col-xs-12 col-sm-6">
         <fieldset>
           <legend>Créditos</legend>
