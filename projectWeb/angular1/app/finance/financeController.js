@@ -19,12 +19,14 @@
             vm.finance = {credits:[{}], debts:[{}]}
             vm.finances = response.data
             vm.calcularValues()
-            tabs.show(vm, {tabList: true, tabCreate: true})
-          
-            http.get(`${url}/count`).then((response) => {
+            
+
+            $http.get(`${url}/count`).then((response) => {
               //calcular quantas paginas são necessarias para ter somente 
               //10 elementos por paginas
-              vm.pages = Math.ceil(response.data.value / 10)
+              vm.pages = Math.ceil(parseInt(response.data.value) / 10)
+              
+              tabs.show(vm, {tabList: true, tabCreate: true})
 
             });
           })
