@@ -14,24 +14,24 @@
           placeholder="Informe o  nome" ng-readonly="fCtrl.tabDelete"></td>
 
         <td><input ng-model="debt.value" class="form-control"
-          placeholder="Informe o  nome" ng-readonly="fCtrl.tabDelete"
+          placeholder="Informe o  Valor" ng-readonly="fCtrl.tabDelete"
           type="number" ng-change="fCtrl.calcularValues()"></td>
 
         <td><input ng-model="debt.status" class="form-control"
-            placeholder="Informe o  nome" ng-readonly="fCtrl.tabDelete"
-            type="number"></td>
+            placeholder="Informe o  Status" ng-readonly="fCtrl.tabDelete"
+            ></td>
 
         <td class="table-actions">
           <button class="btn btn-success" ng-disabled="fCtrl.tabDelete"
-            ng-click="fCtrl.btnAddDebit($index)">
+            ng-click="fCtrl.btnAddDebt($index)">
             <i class="fa fa-plus"></i>
           </button>
           <button class="btn btn-warning" ng-disabled="fCtrl.tabDelete"
-            ng-click="fCtrl.btnCloneDebit($index, debt)">
+            ng-click="fCtrl.btnCloneDebt($index, debt)">
             <i class="fa fa-clone"></i>
           </button>
           <button class="btn btn-danger" ng-disabled="fCtrl.tabDelete"
-          ng-click="fCtrl.btnDeleteDebit($index)">
+          ng-click="fCtrl.btnDeleteDebt($index)">
             <i class="fa fa-trash-o"></i>
           </button>
         </td>

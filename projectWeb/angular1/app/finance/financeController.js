@@ -1,25 +1,40 @@
 (function() {
     angular.module('appPrincipal').controller('FinanceCtrl', [
       '$http',
+      '$location',
       'msgs',
       'tabs',
       FinanceController
     ])
-    function FinanceController($http, msgs, tabs) {
+    function FinanceController($http, $location, msgs, tabs) {
         const vm = this
         const url = 'http://localhost:5004/api/finance'
 
         vm.refresh = function() {
-          $http.get(url).then(function(response) {
+          //definido qual a pagina está sendo visualizada pelo usuário
+          const page = parseInt($location.search().page) || 1
+
+          //Iniciando o calculo dos valores definido no mongodb
+          $http.get(`${url}?skip=${(page - 1) * 10}&limit=10`).then(function(response) {
             vm.finance = {credits:[{}], debts:[{}]}
             vm.finances = response.data
             vm.calcularValues()
-            tabs.show(vm, {tabList: true, tabCreate: true})
+            
+
+            $http.get(`${url}/count`).then((response) => {
+              //calcular quantas paginas são necessarias para ter somente 
+              //10 elementos por paginas
+              vm.pages = Math.ceil(parseInt(response.data.value) / 10)
+              
+              tabs.show(vm, {tabList: true, tabCreate: true})
+
+            });
           })
         }
 
         vm.create = function() {
-
+          console.log(vm.finance);
+          
           $http.post(url, vm.finance).then(function(response) {
               vm.refresh()
               msgs.addSuccess('Operação Realizada com Sucesso')
@@ -85,18 +100,18 @@
 
        //implementação dos botoes de ação  de delete
         //botão de adicionar credito
-        vm.btnAddDebit = function(index){
+        vm.btnAddDebt = function(index){
           vm.finance.debts.splice(index + 1, 0,{});
         }
 
         //botão de clonar credito
-        vm.btnCloneDebit = function(index, {name, value, status}){
+        vm.btnCloneDebt = function(index, {name, value, status}){
           vm.finance.debts.splice(index + 1, 0, {name, value, status});
           vm.calcularValues()  
         }
 
         //botão de deletar Credito
-        vm.btnDeleteDebit = function(index){
+        vm.btnDeleteDebt = function(index){
           if(vm.finance.debts.length > 1){
             vm.finance.debts.splice(index, 1);
             vm.calcularValues() 
@@ -106,20 +121,20 @@
         //para o funcionamento do component Summary
         vm.calcularValues = function(){
           vm.credit = 0
-          vm.debit = 0
+          vm.debt = 0
 
           if (vm.finance){
             //calculo dos valores de creditos
             vm.finance.credits.forEach(({value}) => {
               vm.credit += !value || isNaN(value) ? 0 : parseFloat(value)
             });
-            //calculo para os valores de debitos
+            //calculo para os valores de debtos
             vm.finance.debts.forEach(({value}) => {
-              vm.debit += !value || isNaN(value) ? 0 : parseFloat(value)
+              vm.debt += !value || isNaN(value) ? 0 : parseFloat(value)
             });
 
             //calculo do valor Total
-            vm.total = vm.credit - vm.debit
+            vm.total = vm.credit - vm.debt
 
           }
         }

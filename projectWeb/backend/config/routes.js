@@ -14,5 +14,6 @@ module.exports = function(server) {
     finaceService.register(router, '/finance')
 
     const financeSummaryService = require('../api/finaceSummary/financeSummaryService')
+    router.route('/financeSummary').get(financeSummaryService.getSummary)
 
 }
