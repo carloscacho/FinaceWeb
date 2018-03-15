@@ -7,7 +7,7 @@
         url: "/dashboard",
         templateUrl: "dash/dashboard.html"
       }).state('finance', {
-        url: "/finance",
+        url: "/finance?page",
         templateUrl: "finance/tabs.html"
       })
 

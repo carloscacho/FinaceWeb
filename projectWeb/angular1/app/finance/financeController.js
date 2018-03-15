@@ -1,20 +1,32 @@
 (function() {
     angular.module('appPrincipal').controller('FinanceCtrl', [
       '$http',
+      '$location',
       'msgs',
       'tabs',
       FinanceController
     ])
-    function FinanceController($http, msgs, tabs) {
+    function FinanceController($http, $location, msgs, tabs) {
         const vm = this
         const url = 'http://localhost:5004/api/finance'
 
         vm.refresh = function() {
-          $http.get(url).then(function(response) {
+          //definido qual a pagina está sendo visualizada pelo usuário
+          const page = parseInt($location.search().page) || 1
+
+          //Iniciando o calculo dos valores definido no mongodb
+          $http.get(`${url}?skip=${(page - 1) * 10}&limit=10`).then(function(response) {
             vm.finance = {credits:[{}], debts:[{}]}
             vm.finances = response.data
             vm.calcularValues()
             tabs.show(vm, {tabList: true, tabCreate: true})
+          
+            http.get(`${url}/count`).then((response) => {
+              //calcular quantas paginas são necessarias para ter somente 
+              //10 elementos por paginas
+              vm.pages = Math.ceil(response.data.value / 10)
+
+            });
           })
         }
 
