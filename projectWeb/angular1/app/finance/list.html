@@ -11,9 +11,9 @@
     </thead>
     <tbody>
       <tr ng-repeat="finance in fCtrl.finances">
-        <td>{{finance.name}}</td>
-        <td>{{finance.month}}</td>
-        <td>{{finance.year}}</td>
+        <td>{{:: finance.name}}</td>
+        <td>{{:: finance.month}}</td>
+        <td>{{:: finance.year}}</td>
         <td class="table-actions">
             <button class="btn btn-warning" ng-click="fCtrl.showTabUpdate(finance)">
               <i class="fa fa-pencil"></i></button>

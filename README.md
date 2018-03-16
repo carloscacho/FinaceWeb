@@ -17,9 +17,9 @@ O dashboard apresenta o acumulado de todos os meses, já cadastrados.
 Nesta aba pode ser inserido um novo ciclo de pagamentos, adicionado os créditos e os débitos de um mês
 
 ---
-<img src="https://raw.githubusercontent.com/carloscacho/FinaceWeb/master/screen/lista.png" width="45%">
+<img src="https://raw.githubusercontent.com/carloscacho/FinaceWeb/master/screen/lista.png" width="43%">
 
- <img src="https://raw.githubusercontent.com/carloscacho/FinaceWeb/master/screen/incluir.png" width="45%">
+ <img src="https://raw.githubusercontent.com/carloscacho/FinaceWeb/master/screen/incluir.png" width="43%">
 
 
 ## Tecnologias utilizadas
