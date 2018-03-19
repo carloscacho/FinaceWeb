@@ -25,5 +25,8 @@
     "gulp-uglifycss": "^1.0.8",
     "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
   }
 }
