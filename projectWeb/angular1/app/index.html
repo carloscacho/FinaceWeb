@@ -3,24 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeira App</title>
+    <title>Finace WEB</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/assets/css/deps.min.css">
     <link rel="stylesheet" href="/assets/css/app.min.css">
   </head>
   <body class="skin-blue fixed sidebar-mini">
     <div class="wrapper">
-      <header class="main-header" ng-include="'/template/header.html'"></header>
-      <aside class="main-sidebar" ng-include="'/template/menu.html'"> </aside>
+      <header class="main-header" ng-include="'/template/header/header.html'"></header>
+      <aside class="main-sidebar" ng-include="'/template/menu/menu.html'"> </aside>
 
       <div class="content-wrapper" ui-view></div>
-      <footer class="main-footer" ng-include="'/template/footer.html'"></footer>
+      <footer class="main-footer" ng-include="'/template/footer/footer.html'"></footer>
 
     </div>
     <script src="/assets/js/deps.min.js" charset="utf-8"></script>
     <script src="/assets/js/app.min.js" charset="utf-8"></script>
-    <!-- service worker -->
-     <script src="/serviceWorker1/manifoldjs-sw-register.js" type="text/javascript"></script>
-    <script src="/serviceWorker1/manifoldjs-sw.js" type="text/javascript"></script>
+
   </body>
 </html>

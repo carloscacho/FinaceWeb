@@ -1,17 +1,17 @@
 (function () {
-  angular.module('appPrincipal').factory('msgs',[
+  angular.module('appPrincipal').factory('msgs', [
     'toastr',
     MsgsFactory
   ])
+
   function MsgsFactory(toastr) {
 
     function addMsgs(msgs, title, method) {
-        if(msgs instanceof Array){
-          msgs.forEach(msg => toastr[method](msg, title))
-        }
-        else {
-          toastr[method](msgs, title)
-        }
+      if (msgs instanceof Array) {
+        msgs.forEach(msg => toastr[method](msg, title))
+      } else {
+        toastr[method](msgs, title)
+      }
     }
 
     function addSuccess(msgs) {
@@ -24,6 +24,10 @@
 
     }
 
-    return { addSuccess, addError }
+    return {
+      addSuccess,
+      addError
+    }
   }
+  
 })()

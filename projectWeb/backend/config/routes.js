@@ -1,19 +1,32 @@
 const express = require('express')
 const auth = require('./auth')
 
-module.exports = function(server) {
+module.exports = function (server) {
 
     /*
-    * Rotas abertas
-    */
-    const router = express.Router()
-    server.use('/api', router)
+     * Rotas abertas
+     */
+    const openApi = express.Router()
+    server.use('/oapi', openApi)
+
+    //rotas para as login cadastro e validaToken
+    const AuthService = require('../api/user/authService')
+    openApi.post('/login', AuthService.login)
+    openApi.post('/signup', AuthService.signup)
+    openApi.post('/validateToken', AuthService.validateToken)
+
+    /*
+     * Rotas protegidas por Token JWT
+     */
+    const protectedApi = express.Router()
+    server.use('/api', protectedApi)
+    protectedApi.use(auth)
 
     //rotas da api
     const finaceService = require('../api/finace/financeService');
-    finaceService.register(router, '/finance')
+    finaceService.register(protectedApi, '/finance')
 
     const financeSummaryService = require('../api/finaceSummary/financeSummaryService')
-    router.route('/financeSummary').get(financeSummaryService.getSummary)
+    protectedApi.route('/financeSummary').get(financeSummaryService.getSummary)
 
 }
