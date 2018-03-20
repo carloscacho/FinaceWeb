@@ -8,10 +8,8 @@
     ])
     function FinanceController($http, $location, msgs, tabs) {
         const vm = this
-        const url = 'https://finacewe-backend.herokuapp.com/api/finance'
-
+        const url = 'http://localhost:5004/api/finance'
         vm.refresh = function() {
-          //definido qual a pagina está sendo visualizada pelo usuário
           const page = parseInt($location.search().page) || 1
 
           //Iniciando o calculo dos valores definido no mongodb
