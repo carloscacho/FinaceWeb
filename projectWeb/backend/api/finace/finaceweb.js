@@ -24,4 +24,10 @@ const billingCycleSchema = new mongoose.Schema({
   debts: [debtSchema]
 })
 
+//dados do usuario
+const userFinances = new mongoose.Schema({
+  emailb64: { type: String },
+  finaces: [billingCycleSchema]
+})
+
 module.exports = restful.model('BillingCycle', billingCycleSchema)

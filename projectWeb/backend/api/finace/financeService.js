@@ -14,6 +14,8 @@ function sendErrosOrNext(req, res, next) {
     var errors = parseErrors(bundle.errors)
     res.status(500).json({errors})
   }else{
+    console.log("tudo certo aqui");
+    
     next()
   }
 

@@ -27,6 +27,8 @@
     "gulp-webserver": "^0.9.1"
   },
   "dependencies": {
+    "angular-money-directive": "^1.2.5",
+    "angular-money-mask": "^1.0.0",
     "http-server": "^0.11.1"
   }
 }

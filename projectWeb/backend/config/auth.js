@@ -27,7 +27,11 @@ module.exports = (req, res, next) => {
         } else {
             req.decoded = decoded
             //caso é validado chama o next middleware
+            console.log("usuario Cadastrado");
+            
             next()
+            console.log("depois do novo middleware");
+            
         }
       })
     }

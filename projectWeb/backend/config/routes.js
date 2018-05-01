@@ -21,6 +21,18 @@ module.exports = function (server) {
     const protectedApi = express.Router()
     server.use('/api', protectedApi)
     protectedApi.use(auth)
+    
+    // protectedApi.use((req, res, next) => {
+    //     if(req.method === 'OPTIONS') {
+    //         //esse metod retorna quais são os metodos que podem ser consumido de uma outra origem
+    //         next()
+    //     //caso for outro metodo e verificado o TOKEN
+    //     }
+    //     //aqui tem fazer acesso a dados do usuario
+        
+    //     console.log("só passando por aqui");
+    //     next()
+    // })
 
     //rotas da api
     const finaceService = require('../api/finace/financeService');
