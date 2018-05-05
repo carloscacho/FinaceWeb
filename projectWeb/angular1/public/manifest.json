@@ -1,0 +1,107 @@
+{
+    "dir": "ltr",
+    "lang": "Portuguese",
+    "name": "Finace WEB - Controle Financeiro",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "http://localhost/auth.html",
+    "short_name": "FWEB",
+    "background_color": "#FAFAFA",
+    "theme_color": "#512DA8", 
+    "description": "Controle Financeiro para empresas e pessoas, controle de entradas e saídas. ",
+    "orientation": "any",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/assets/images/assets/icon-72x72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "/assets/images/64872671-e004-d09e-4db6-81b334663606.webPlatform.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/99c99651-2840-3d4f-dc09-089d010b0055.webPlatform.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/6779a563-66e9-3a04-bc16-d35d69c9c7ce.webPlatform.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/484c8b30-7d21-48cc-b1ec-1ad2c1d9f639.webPlatform.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/678482e7-3762-655f-661d-fce7561535a6.webPlatform.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/7e7e40d9-697c-4d6b-df54-b0c6c54be5e5.webPlatform.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/9ee997c0-d80c-387f-2b91-6d2ac7a2969b.webPlatform.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/9497d5ee-ecad-556e-5ef0-a594e64f35a5.webPlatform.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/38c1f1f3-2cbe-3079-4ecb-30759cd1632d.webPlatform.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/bffb2dfb-835a-15a9-c005-73bac71002b3.webPlatform.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/7c9155ae-e2c0-d8d2-d6f3-5babe8c01ee2.webPlatform.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/92b6a23b-9ed9-10ad-7ae7-ff35f1a6b0ef.webPlatform.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/ios/ios-appicon-1024-1024.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/6b9c13d1-ba86-72f3-8ce7-63116ebf4daf.webPlatform.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/579563c1-a896-15c7-9011-3ce83e311f37.webPlatform.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/2bbd820e-d4dc-04c5-d07d-541165eacb76.webPlatform.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/84b82f1c-c110-d6a8-e315-285492791726.webPlatform.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+    ]
+}

@@ -2,12 +2,14 @@
 <html ng-app="appPrincipal">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#512DA8"/>
     <title>Finace WEB</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link rel="manifest" href="/manifest.json">
+    <!-- <link rel="manifest" href="/manifest.json"> -->
     <link rel="stylesheet" href="/assets/css/deps.min.css">
     <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="manifest" href="/manifest.json"></link>
   </head>
   <body class="skin-blue fixed sidebar-mini">
     <div class="wrapper">
@@ -21,6 +23,17 @@
     <script src="/assets/js/deps.min.js" charset="utf-8"></script>
     <script src="/assets/js/app.min.js" charset="utf-8"></script>
     
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(function () {
+        console.log('service worker registered');
+      })
+      .catch(function () {
+        console.warn('service worker failed');
+      });
+  }
+</script>
 
   </body>
 </html>
