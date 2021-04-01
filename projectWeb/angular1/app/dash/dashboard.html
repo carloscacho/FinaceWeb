@@ -1,18 +1,25 @@
 <content-header name="Dashboard"
-small="Versão 1.0">
+small="Versão 1.1">
 </content-header>
 
 <section class="content" ng-controller='DashboardCtrl as dash'>
-  <value-box grid="12 8 4" color="green" value="R$ {{ dash.credit | number:2 }}"
-  text="Total de Créditos" icon="fa-bank">
-  </value-box>
+  <div class="row">
+    <div class="col-sm-12  col-md-8  col-lg-4">
+      <value-box grid="12 8 4" color="green" value="R$ {{ dash.credit | number:2 }}"
+                 text="Total de Créditos" icon="fa-bank">
+      </value-box>
+    </div>
+    <div class="col-sm-12  col-md-8  col-lg-4">
+      <value-box grid="12 8 4" color="red" value="R$ {{ dash.debt | number:2}}"
+                 text="Total de Débitos" icon="fa-credit-card">
+      </value-box>
+    </div>
+    <div class="col-sm-12  col-md-8  col-lg-4">
+      <value-box grid="12 8 4" color="blue" value="R$ {{ dash.total | number:2}}"
+                 text="Total Consolidado" icon="fa-money">
+      </value-box>
+    </div>
+  </div>
 
-  <value-box grid="12 8 4" color="red" value="R$ {{ dash.debt | number:2}}"
-  text="Total de Débitos" icon="fa-credit-card">
-  </value-box>
-
-  <value-box grid="12 8 4" color="blue" value="R$ {{ dash.total | number:2}}"
-  text="Total Consolidado" icon="fa-money">
-  </value-box>
 
 </section>

@@ -10,7 +10,8 @@
   function DashboardController($http) {
     const vm = this
     vm.getSummary = function() {
-      const url = 'https://finacewe-backend.herokuapp.com/api/financeSummary'
+      // const url = 'https://finacewe-backend.herokuapp.com/api/financeSummary'
+        const url = 'http://localhost:3010/api/financeSummary'
       $http.get(url).then(function(response) {
           const {credit = 0, debt = 0} = response.data
           vm.credit = credit

@@ -3,7 +3,7 @@ var finaceweb = require('../finace/finaceweb')
 
 // middleware de agregação dos valores
 function getSummary(req, res) {
-  finaceweb.aggregate({
+  finaceweb.aggregate([{
     $project: {credit: {$sum: "$credits.value"}, debt: {$sum: "$debts.value"}}
   }, {
     $group: {
@@ -17,12 +17,12 @@ function getSummary(req, res) {
       credit:1,
       debt: 1
     }
-  },function (error, result) {
-      if(error){
-        res.status(500).json({errors: [error]})
-      }else{
-        res.json(_.defaults(result[0], {credit:0, debt:0}))
-      }
+  }]).exec(function (error, result) {
+    if(error){
+      res.status(500).json({errors: [error]})
+    }else{
+      res.json(_.defaults(result[0], {credit:0, debt:0}))
+    }
   })
 
 }

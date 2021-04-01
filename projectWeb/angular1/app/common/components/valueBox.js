@@ -17,8 +17,7 @@
       }
       ],
       template: `
-      <div class="{{$ctrl.gridClass}}">
-        <div class="small-box bg-{{$ctrl.color}}">
+      <div class="small-box bg-{{$ctrl.color}}">
           <div class="inner">
             <h3>{{$ctrl.value}}</h3>
             <p> {{$ctrl.text}}</p>
@@ -27,7 +26,6 @@
             <i class="fa {{$ctrl.icon}}"></i>
           </div>
         </div>
-      </div>
       `
     })
 })()

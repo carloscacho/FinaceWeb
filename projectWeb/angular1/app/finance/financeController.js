@@ -8,7 +8,8 @@
     ])
     function FinanceController($http, $location, msgs, tabs) {
         const vm = this
-        const url = 'https://finacewe-backend.herokuapp.com/api/finance'
+        // const url = 'https://finacewe-backend.herokuapp.com/api/finance'
+        const url = 'http://localhost:3010/api/finance'
 
         vm.refresh = function() {
           //definido qual a pagina está sendo visualizada pelo usuário

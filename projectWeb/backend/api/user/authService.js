@@ -2,7 +2,7 @@ const _ = require('lodash')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const User = require('./user')
-const env = require('../../.env')
+// const env = require('../../.env')
 
 //expressoes regulares que dizem como deve ser o formato da email e da senha
 const emailRegex = /\S+@\S+\.\S+/
@@ -34,7 +34,7 @@ const login = (req, res, next) => {
       //em seguida e compada a senha criptografada
     } else if (user && bcrypt.compareSync(password, user.password)) {
       //se email e senha forem cooretos e criado um token com validade de 1 dia
-      const token = jwt.sign(user, env.authSecret, {
+      const token = jwt.sign(user, process.env.AUTH_SECRET, {
         expiresIn: "1 day"
       })
       
@@ -54,7 +54,7 @@ const login = (req, res, next) => {
 const validateToken = (req, res, next) => {
   const token = req.body.token || ''
   //e utilizado o o token e segrendo para validação
-  jwt.verify(token, env.authSecret, function (err, decoded) {
+  jwt.verify(token, process.env.AUTH_SECRET, function (err, decoded) {
     return res.status(200).send({
       valid: !err
     })

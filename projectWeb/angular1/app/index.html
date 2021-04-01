@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="/assets/css/deps.min.css">
     <link rel="stylesheet" href="/assets/css/app.min.css">
   </head>
-  <body class="skin-blue fixed sidebar-mini">
+  <body class="sidebar-mini layout-fixed layout-navbar-fixed">
     <div class="wrapper">
-      <header class="main-header" ng-include="'/template/header/header.html'"></header>
-      <aside class="main-sidebar" ng-include="'/template/menu/menu.html'"> </aside>
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light" ng-include="'/template/header/navbar/navbar.html'"></nav>
+      <aside class="main-sidebar sidebar-dark-primary elevation-4" ng-include="'/template/menu/menu.html'"> </aside>
 
-      <div class="content-wrapper" ui-view></div>
+      <div class="content-wrapper" style="min-height: 212px;" ui-view></div>
       <footer class="main-footer" ng-include="'/template/footer/footer.html'"></footer>
+
 
     </div>
     <script src="/assets/js/deps.min.js" charset="utf-8"></script>

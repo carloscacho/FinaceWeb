@@ -1,11 +1,14 @@
-<a href class="sidebar-toggle" data-toggle="offcanvas" role="button">
-    <span class="sr-only">Toggle navigation</span>
-  </a>
-  <div class="navbar-custom-menu">
-    <ul class="nav navbar-nav">
-      <!-- <li class="dropdown messages-menu" ng-include="'/template/header/navbar/messages.html'"></li>
-      <li class="dropdown notifications-menu" ng-include="'/template/header/navbar/notifications.html'"></li>
-      <li class="dropdown tasks-menu" ng-include="'/template/header/navbar/tasks.html'"></li> -->
-      <li ng-controller="AuthCtrl as auth" class="dropdown user user-menu" ng-include="'/template/header/navbar/user.html'"></li>
-    </ul>
-  </div>
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-widget="pushmenu">
+            <i class="fa fa-bars"></i>
+        </a>
+    </li>
+</ul>
+
+<ul class="navbar-nav ml-auto">
+  <!-- <li class="dropdown messages-menu" ng-include="'/template/header/navbar/messages.html'"></li>
+  <li class="dropdown notifications-menu" ng-include="'/template/header/navbar/notifications.html'"></li>
+  <li class="dropdown tasks-menu" ng-include="'/template/header/navbar/tasks.html'"></li> -->
+  <li ng-controller="AuthCtrl as auth" class="dropdown user user-menu nav-item" ng-include="'/template/header/navbar/user.html'"></li>
+</ul>

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const env = require('../.env')
+// const env = require('../.env')
 
 //middleware resposavel por proteger a API contra acesso indevidos 
 module.exports = (req, res, next) => {
@@ -19,7 +19,7 @@ module.exports = (req, res, next) => {
           return res.status(403).send({errors: ['No token provided.']})
         }
         //e verificado se toke foi criado pela API
-        jwt.verify(token, env.authSecret, function(err, decoded) {
+        jwt.verify(token, process.env.AUTH_SECRET, function(err, decoded) {
           if(err) {
             return res.status(403).send({
                 errors: ['Failed to authenticate token.']
